@@ -1,3 +1,6 @@
+library(quantmod)
+library(xts)
+
 data1=read.csv("wipro.csv")
 dfx1 = xts(data1$Close, order.by=as.Date(data1$Date))
 mwipro=to.monthly(dfx1)
