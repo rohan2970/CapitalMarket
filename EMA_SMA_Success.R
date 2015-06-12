@@ -1,5 +1,7 @@
 library(quantmod)
 library(xts)
+library(caret)
+library(ggplot2)
 
 data1=read.csv("wipro.csv")
 dfx1 = xts(data1$Close, order.by=as.Date(data1$Date))
