@@ -1,3 +1,11 @@
+install.packages("twitteR")
+install.packages("bitops")
+install.packages("RCurl")
+install.packages("wordcloud")
+install.packages("tm")
+install.packages("plyr")
+install.packages("stringr")
+
 library(twitteR)
 library(bitops)
 library(RCurl)
@@ -8,18 +16,18 @@ consumer_secret <- 'cdad2o3AEsiuLgGixr9JKTtpRea7h7Ul2VnN5AMhuqqXfuI4rl'
 access_secret <- '100759949-au1vGhg9bKXx1Iy76JZCli8lLrb7iFjK7DPDAyoB'
 access_token <- 'ggcTsw9H0uSca9W4qBf1vqepDqh5P1iNUz5qiM8wmrj4B'
 setup_twitter_oauth(consumer_key, consumer_secret, access_secret, access_token)
-upes.tweets = searchTwitter('apple', n=1000, lang="en")
-upes.tweets
-class(upes.tweets)
-utweet = upes.tweets[[1]]
+company.tweets = searchTwitter('samsung', n=1500, lang="en")
+company.tweets
+class(company.tweets)
+utweet = company.tweets[[1]]
 utweet
 class(utweet)
 utweet$getText()
 library(plyr)
-upes.text = laply(upes.tweets, function(t) t$getText() )
-upes.text
-upestexts = upes.text[1:1000]
-class(upestexts)
+company.text = laply(company.tweets, function(t) t$getText() )
+company.text
+companytexts = company.text[1:1500]
+class(companytexts)
 msg.pos = scan('C:/Users/Rohan/Desktop/CapitalMarket/positive-words.txt',
                what='character', comment.char=';')
 msg.neg = scan('C:/Users/Rohan/Desktop/CapitalMarket/negative-words.txt',what='character', comment.char=';')
@@ -60,20 +68,20 @@ score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
   
 }
 
-checkupes = upestexts[1:1000]
-resultupes = score.sentiment(checkupes, pos.words, neg.words)
+check = companytexts[1:1500]
+result = score.sentiment(check, pos.words, neg.words)
 
-mean(resultupes$score)
+mean(result$score)
 
-plot(resultupes)
+plot(result)
 
-upestexts <- gsub("rt", "", upestexts)
-upestexts <- gsub("@\\w+", "", upestexts)
-upestexts <- gsub("[[:punct:]]", "", upestexts)
-upestexts <- gsub("http\\w+", "", upestexts)
-upestexts <- gsub("[ |\t]{2,}", "", upestexts)
-upestexts <- gsub("^ ", "", upestexts)
-upestexts <- gsub(" $", "", upestexts)
-upestexts.corpus <- Corpus(VectorSource(upestexts))
-upestexts.corpus <- tm_map(upestexts.corpus, function(x)removeWords(x,stopwords()))
-wordcloud(upestexts.corpus,min.freq = 2, scale=c(7,0.5),colors=brewer.pal(8, "Dark2"),  random.color= TRUE, random.order = FALSE, max.words = 150)
+companytexts <- gsub("rt", "", companytexts)
+companytexts <- gsub("@\\w+", "", companytexts)
+companytexts <- gsub("[[:punct:]]", "", companytexts)
+companytexts <- gsub("http\\w+", "", companytexts)
+companytexts <- gsub("[ |\t]{2,}", "", companytexts)
+companytexts <- gsub("^ ", "", companytexts)
+companytexts <- gsub(" $", "", companytexts)
+companytexts.corpus <- Corpus(VectorSource(companytexts))
+companytexts.corpus <- tm_map(companytexts.corpus, function(x)removeWords(x,stopwords()))
+wordcloud(companytexts.corpus,min.freq = 2, scale=c(7,0.5),colors=brewer.pal(8, "Dark2"),  random.color= TRUE, random.order = FALSE, max.words = 150)
