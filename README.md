@@ -1,23 +1,21 @@
 # CapitalMarket
 Project in Xebia regarding Capital Market Forecast
 
-Things we have achieved:
-Prediction in R 
-1.	Exponential Moving Average Algorithm (EMA)
-2.	Simple Moving Average Algorithm (SMA)
-3.	Support Vector Machine Algorithm (SVM)
-4.	r-Part Algorithm
-5.	Boosted Trees Algorithm
-6.	K-nearest neighbour Algorithm (kNN)
+Prerequisites :-
+1.)	R - v3.0 or higher
+2.)	R Studio
+3.)	Packages needed to be installed :-
+    kknn       –  Used for k-Nearest-Neighbour 
+  	quantmod   –  Used for SMA and EMA
+  	e1071      –  Used for Support Vector Machine
+    twitterR; Bitops; Rcurl; wordcloud; tm
 
-We trained our dataset using these 6 algorithms and tested these algorithms on test data set and eventually found out kNN to be best suitable for our data set as it gave the highest precision and accuracy.
+Step1 - Copy the "Testing" folder and Paste it into "htdocs" folder in Xampp directory on your local machine.
+Step2 - Open "config.php" file in "Testing" folder.
+        Change value of "xampp_dir_name" to the corresponding path of "Xampp/htdocs/Testing" folder on your local machine.
+        Change value of "r_dir_name" to the corresponding path of "./R-3.2.0/bin" folder on your local machine.
+Step3 - Change the value of "proj_dir_path" in both the R-Scripts i.e. "Trends.R" and "Prediction_knn.R".
 
-Factors Involved
-We used Open Price, Close Price & Volume of the data set and predicted the polarity of the next day by analysing the trends of last 5 years data.
-
-Sentiment Analysis
-We performed the sentiment analysis of a particular company to calculate market sentiment of the company and performed
-•	Calculated Mean sentiment score
-•	Plotted graphs for frequency of positive and negative words and 
-•	Created a Wordcloud.
-
+Now, you are ready to run the project.
+Open the Browser and run "index.html" file stored in "Testing" folder.
+ 
