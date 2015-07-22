@@ -1,3 +1,8 @@
+install.packages("quantmod")
+install.packages("xts")
+install.packages("caret")
+install.packages("ggplot2")
+install.packages("forecast")
 library(quantmod)
 library(xts)
 library(caret)
