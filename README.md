@@ -18,4 +18,5 @@ Step3 - Change the value of "proj_dir_path" in both the R-Scripts i.e. "Trends.R
 
 Now, you are ready to run the project.
 Open the Browser and run "index.html" file stored in "Testing" folder.
- 
+
+When you are running the sentiment analysis scripts, change the working directory to the location where you have stored positive-words.txt and negative-words.txt file.
