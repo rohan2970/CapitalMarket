@@ -16,7 +16,7 @@ consumer_secret <- 'cdad2o3AEsiuLgGixr9JKTtpRea7h7Ul2VnN5AMhuqqXfuI4rl'
 access_secret <- '100759949-au1vGhg9bKXx1Iy76JZCli8lLrb7iFjK7DPDAyoB'
 access_token <- 'ggcTsw9H0uSca9W4qBf1vqepDqh5P1iNUz5qiM8wmrj4B'
 setup_twitter_oauth(consumer_key, consumer_secret, access_secret, access_token)
-company.tweets = searchTwitter('samsung', n=1500, lang="en")
+company.tweets = searchTwitter('infosys', n=1500, lang="en")
 company.tweets
 class(company.tweets)
 utweet = company.tweets[[1]]
