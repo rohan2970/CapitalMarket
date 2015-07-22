@@ -8,7 +8,7 @@ library(xts)
 library(caret)
 library(ggplot2)
 library(forecast)
-data1=read.csv("nestle.csv")
+data1=read.csv("infy.csv")
 data2 = data1[1:10,5]
 weighted = 10
 sumer = 0
