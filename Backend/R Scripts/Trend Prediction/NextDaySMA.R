@@ -1,9 +1,14 @@
+install.packages("quantmod")
+install.packages("xts")
+install.packages("caret")
+install.packages("ggplot2")
+install.packages("forecast")
 library(quantmod)
 library(xts)
 library(caret)
 library(ggplot2)
 library(forecast)
-data1=read.csv("nestle.csv")
+data1=read.csv("infy.csv")
 data2 = data1[1:10,5]
 weighted = 100
 sumer = 0
