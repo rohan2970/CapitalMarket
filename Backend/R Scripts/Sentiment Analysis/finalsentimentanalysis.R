@@ -28,9 +28,8 @@ company.text = laply(company.tweets, function(t) t$getText() )
 company.text
 companytexts = company.text[1:1500]
 class(companytexts)
-msg.pos = scan('C:/Users/Rohan/Desktop/CapitalMarket/positive-words.txt',
-               what='character', comment.char=';')
-msg.neg = scan('C:/Users/Rohan/Desktop/CapitalMarket/negative-words.txt',what='character', comment.char=';')
+msg.pos = scan('positive-words.txt', what='character', comment.char=';')
+msg.neg = scan('negative-words.txt', what='character', comment.char=';')
 
 class(msg.pos)
 pos.words = c(msg.pos, 'upgrade')
